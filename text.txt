@@ -1,5 +1,0 @@
-process is a global object that represents the current Node.js runtime process (your running program).
-You can access it anywhere without importing anything.
-It provides information and methods to control the program, e.g. environment variables (process.env), command-line arguments (process.argv), current working directory, etc.
-
-dotenv.config() is what actually loads the variables from your .env file into process.env so you can use them inside your Node.js app.
