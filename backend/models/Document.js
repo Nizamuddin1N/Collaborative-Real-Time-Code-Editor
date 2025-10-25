@@ -1,7 +1,7 @@
 import mongoose from "mongoose"
 
 const versionSchema = new mongoose.Schema({
-    content: { type: String, required: true },
+    content: { type: String },
     timestamp: { type: Date, default: Date.now }
 })
 

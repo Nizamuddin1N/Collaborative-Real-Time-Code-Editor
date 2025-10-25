@@ -25,7 +25,6 @@ export const updateDocument = async(req, res) => {
         const doc = await Document.findById(req.params.id)
         if (!doc) return res.status(404).json({ error: "Document not found" })
 
-        // push old content to versions before updating
         if (doc.content !== req.body.content) {
             doc.versions.push({ content: doc.content })
         }
@@ -35,9 +34,11 @@ export const updateDocument = async(req, res) => {
 
         res.json({ message: "Document updated", doc })
     } catch (error) {
+        console.error("Update error:", error)
         res.status(500).json({ error: error.message })
     }
 }
+
 
 export const getVersions = async(req, res) => {
     try {
